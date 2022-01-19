@@ -12,7 +12,7 @@ import {
 function App() {
   let [windowWidth, SetwindowWidth] = useState("");
 
-  let [left, Setleft] = useState("-950px");
+  let [left, Setleft] = useState(-2050);
 
   useEffect(() => {
     if (document.documentElement.offsetWidth > 1000) {
@@ -63,11 +63,16 @@ function App() {
           style={{
             position: "absolute",
             top: 0,
-            left: left,
-            width: "3300px",
+            left: left + "px",
+            width: "5500px",
             overflow: "hidden",
           }}
         >
+          <img
+            src="https://static.wanted.co.kr/images/banners/1473/41f7b36e.jpg"
+            alt="slide"
+            style={{ margin: "0 20px", display: "inline-block" }}
+          />
           <img
             src="https://static.wanted.co.kr/images/banners/1484/b2853456.jpg"
             alt="slide"
@@ -85,6 +90,11 @@ function App() {
             alt="slide"
             style={{ margin: "0 20px", display: "inline-block" }}
           />
+          <img
+            src="https://static.wanted.co.kr/images/banners/1490/0b775035.jpg"
+            alt="slide"
+            style={{ margin: "0 20px", display: "inline-block" }}
+          />
         </div>
         <div style={{ position: "absolute", top: "35%", left: "20%" }}>
           <MdOutlineArrowBackIosNew
@@ -92,6 +102,10 @@ function App() {
               padding: "40px 20px",
               backgroundColor: "#ccc",
               borderRadius: "15px",
+            }}
+            onClick={() => {
+              let next = left;
+              Setleft(next + 1100);
             }}
           />
         </div>
@@ -104,7 +118,7 @@ function App() {
             }}
             onClick={() => {
               let next = left;
-              Setleft("-1900px");
+              Setleft(next - 1100);
             }}
           />
         </div>
